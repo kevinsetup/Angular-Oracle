@@ -7,6 +7,16 @@
     background-size: cover;
   }
 
-  table{
-    width: 100%;
+  .center {
+    display: flex;
+    justify-content: left;
   }
+
+  table {
+    width: 120%;
+    justify-content: left;
+  }
+  .upeu{
+    background-color: #7b1038;
+  }
+  
