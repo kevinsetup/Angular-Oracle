@@ -7,8 +7,9 @@
                 <input type="hidden" name = "ID_TIPO_UNIDAD" #ID_TIPO_UNIDAD = "ngModel"  [(ngModel)] = "tipo_academicaService.selectedTipo.ID_TIPO_UNIDAD">
                 <div class="row">
                   <div class="input-field col s10">
-                    <input type="text" matInput id="ng"  name="nombre" #nombre="ngModel" [(ngModel)]= "tipo_academicaService.selectedTipo.NOMBRE">
                     <label for="ng">nombre</label>
+                    <input type="text"  matInput id="ng" placeholder="Ingrese aquí"  name="nombre" #nombre="ngModel" [(ngModel)]= "tipo_academicaService.selectedTipo.NOMBRE">
+                   
                     </div>
                 </div>
     
@@ -23,7 +24,7 @@
     <div class="col s5">
       <table  class="mat-elevation-z2">
         <thead>
-          <th>ID</th>
+          <th>N°</th>
           <th>Nombre</th>
           <th>Estado</th>
           <th>Editar</th>
@@ -32,10 +33,11 @@
       
         </thead>
         <tbody>
-         <tr *ngFor= "let i of tipo_academicaService.tipos"> 
-          <td>{{i.ID_TIPO_UNIDAD}}</td>
+         <tr *ngFor= "let i of tipo_academicaService.tipos; let indice = index"> 
+          <td>{{indice+1}}</td>
           <td>{{i.NOMBRE}}</td>
           <td>{{i.ESTADO}}</td>
+         
         
       
           <td>
@@ -66,7 +68,6 @@
 
 
 </div>
-
 
 
 

@@ -1,0 +1,104 @@
+
+<form #tipoForm= "ngForm" (ngSubmit) = "addAcad(tipoForm)">
+  <input type="text"   name = "ID_UNIDAD" [(ngModel)]="Unidad_academica.selectedAcad.ID_UNIDAD" >
+  <input type="hidden"   name = "test" [(ngModel)]="ID_UNIDAD" >
+<mat-form-field>
+  <mat-select  placeholder="CAMPUS"  (selectionChange)="changeCampus($event.value)" >
+    <mat-option  *ngFor="let unidad of Unidad_academica.campus" [value]="unidad">
+      {{ unidad.NOMBRE }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+<input type="text"   name = "id_padre" [(ngModel)]="ID" >
+<mat-form-field>
+  <mat-select placeholder="FACULTADES" (selectionChange)="changeFacult($event.value)"  >
+    <mat-option  *ngFor="let alo of Unidad_academica.facultad" [value]= "alo"  g-hide='alo.FACULTADES == null'>
+       {{alo.FACULTADES}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+  <input type="hidden" name = "ID_TIPO_UNIDAD">
+  <div class="row">
+    <div class="input-field col s10">
+      <label for="ng">CARRERA</label>
+      <input type="text"  matInput id="ng" placeholder="Ingrese aquí"  name="nombre"  [(ngModel)]="Unidad_academica.selectedAcad.NOMBRE" >
+
+     
+      </div>
+  </div>
+
+
+  <button mat-raised-button color="primary" (click) = "reset()" class="upeu">Guardar</button>
+  
+</form>
+
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+        <div class="card">
+          <div class="card-content">
+            <form>
+  
+                <div class="row">
+                  <div class="input-field col s10">
+      
+                  
+                    </div>
+                </div>
+    
+
+                <button mat-raised-button color="primary" class="upeu">Guardar</button>
+              
+            </form>
+            
+          </div>
+        </div>
+    </div>
+
+<div class="col s5">
+    <table  class="mat-elevation-z2">
+      <thead>
+        <th>N°</th>
+        <th>Nombre</th>
+        <th>TIPO</th>
+        <th>FACULTAD</th>
+        <th>CAMPUS</th>
+        <th>ESTADO</th>
+    
+      </thead>
+      <tbody>
+       <tr *ngFor= "let i of Unidad_academica.academica; let indice = index"> 
+        <td>{{indice+1}}</td>
+        <td>{{i.NOMBRE}}</td>
+        <td>{{i.TIPO}}</td>
+        <td>{{i.FACULTAD}}</td>
+        <td>{{i.CAMPUS}}</td>
+        <td>{{i.ESTADO}}</td>
+       
+      
+    
+        <td>
+          <a (click) = "editAcad(i)">
+           <mat-icon color="red" >edit</mat-icon>
+          </a>
+
+        </td>
+        <td>
+          <a (click) = "deleteTipo(i.ID_UNIDAD)">
+            <mat-icon color="primary" >delete</mat-icon>
+           </a>
+          </td>
+       </tr>
+      
+      </tbody>
+    
+    </table>
+
+
+  </div>
+
+    
+

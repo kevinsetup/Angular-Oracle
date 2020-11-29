@@ -15,9 +15,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from "@angular/material/input";
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select'
 
  
 import { ReactiveFormsModule} from '@angular/forms';
+import { UnidadAcademicaComponent } from './unidad-academica/unidad-academica/unidad-academica.component';
+import { from } from 'rxjs';
 
 
 
@@ -25,7 +28,8 @@ import { ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    TipoAcademicaComponent
+    TipoAcademicaComponent,
+    UnidadAcademicaComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import { ReactiveFormsModule} from '@angular/forms';
     MatInputModule,
     MatToolbarModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
    
  
     

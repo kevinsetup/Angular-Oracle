@@ -9,7 +9,7 @@ export class TipoAcademicaService {
   selectedTipo : tipo_academica;
   tipos : tipo_academica[];
   private httpHeaders = new HttpHeaders({'Content-Type' : 'application/json'});
-  private url : string = 'http://localhost:1212/api/'
+  private url : string = 'http://localhost:1616/api/'
   constructor(private http: HttpClient) {
     this.selectedTipo = new tipo_academica();
   }
